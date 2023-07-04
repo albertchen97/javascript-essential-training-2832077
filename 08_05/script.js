@@ -16,9 +16,14 @@ const greenPack = {
     console.log("this.volume in the method:", this.volume);
     this.volume = volume;
     console.log("this.volume after update:", this.volume);
-    // (function () {
-    //   console.log("this.volume in nested function:", this.volume);
-    // })();
+    (function () {
+      console.log("this.volume in nested function:", this.volume); // hoisted volume = 20
+    })();
+    // Arrow functions does not have the concept of "this".
+    // It will refer "this.volume" to the value in the closest available scope (the object).
+    (() => {
+      console.log("this.volume in nested function:", this.volume);
+    })();
   },
 };
 

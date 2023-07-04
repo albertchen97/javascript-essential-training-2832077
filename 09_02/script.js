@@ -9,10 +9,14 @@ const posX = document.querySelector(".posX span");
 const posY = document.querySelector(".posY span");
 
 // Log when the button is clicked in the console.
-button.addEventListener("click", () => {
-  button.classList.toggle("active");
-  console.log("Button was clicked!");
-}, false);
+button.addEventListener(
+  "click",
+  () => {
+    button.classList.toggle("active");
+    console.log("Button was clicked!");
+  },
+  false
+);
 
 // Update the x and y displays to show the current mouse position.
 const mousePosition = (event) => {
